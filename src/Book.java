@@ -91,4 +91,28 @@ class Book {
         currentBorrowerId = -1;
     }
 
+    /**
+     * Returns the comicValue field value
+     * @return comicValue value in book
+     */
+    int getComicValue() {
+        return this.comicValue;
+    }
+
+    /**
+     * Returns the dramaticValue field value
+     * @return dramaticValue value in book
+     */
+    int getDramaticValue() {
+        return this.dramaticValue;
+    }
+
+    /**
+     * Returns the educationalValue field value
+     * @return educationalValue value in book
+     */
+    int getEducationalValue() {
+        return this.educationalValue;
+    }
+
 }

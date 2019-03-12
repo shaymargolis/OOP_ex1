@@ -51,9 +51,9 @@ public class Patron {
      * @return the literary value this patron assigns to the given book.
      */
     int getBookScore(Book book) {
-        return this.comicTendency * book.comicValue
-                + this.dramaticTendency * book.dramaticValue
-                + this.educationalTendency * book.educationalValue;
+        return this.comicTendency * book.getComicValue()
+                + this.dramaticTendency * book.getDramaticValue()
+                + this.educationalTendency * book.getEducationalValue();
     }
 
     /**

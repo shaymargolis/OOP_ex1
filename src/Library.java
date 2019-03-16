@@ -51,9 +51,9 @@ public class Library {
         // Check if the book already exists
         int i = 0;
         while (i < this.bookList.length && this.bookList[i] != null) {
-            // If the book exists, return failure
+            // If the book exists, return the id of it
             if (this.bookList[i] == book) {
-                return -1;
+                return i;
             }
 
             i++;
@@ -194,6 +194,10 @@ public class Library {
      * some book in the library, false otherwise.
      */
     boolean isBookIdValid(int bookId) {
+        if (bookId >= this.maxBookCapacity) {
+            return false;
+        }
+
         return this.bookList[bookId] != null;
     }
 
@@ -205,6 +209,10 @@ public class Library {
      * a patron in the library, false otherwise.
      */
     boolean isPatronIdValid(int patronId) {
+        if (patronId >= this.maxPatronCapacity) {
+            return false;
+        }
+
         return this.patronList[patronId] != null;
     }
 
@@ -219,9 +227,9 @@ public class Library {
         // Check if the patron already exists
         int i = 0;
         while (i < this.patronList.length && this.patronList[i] != null) {
-            // If the patron exists, return failure
+            // If the patron exists, return the id
             if (this.patronList[i] == patron) {
-                return -1;
+                return i;
             }
 
             i++;
@@ -233,7 +241,7 @@ public class Library {
         }
 
         this.patronList[i] = patron;
-        return 1;
+        return i;
     }
 
     /**

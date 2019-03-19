@@ -1,0 +1,31 @@
+shaymar
+
+
+
+
+=============================
+=      File description     =
+=============================
+Book.java - Contains Book class - which represents a Book in Library
+Patron.java - Contains Patron class - which repesents a Patron in Library
+Library.java - Contains library implementation,
+
+
+
+=============================
+=          Design           =
+=============================
+I implemented the classes according to the 
+
+
+
+=============================
+=  Implementation details   =
+=============================
+In the Game class, in order to store the different players, I chose the TreeSet dataset because we perform many
+ insertion and deletion actions on this dataset, actions which a balanced tree performs efficiently.
+
+
+=============================
+=    Answers to questions   =
+=============================

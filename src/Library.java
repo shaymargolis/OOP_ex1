@@ -90,6 +90,8 @@ public class Library {
             if (this.bookList[i].getCurrentBorrowerId() == patronId) {
                 borrowed += 1;
             }
+
+            i++;
         }
 
         return borrowed;
@@ -109,6 +111,18 @@ public class Library {
             return false;
         }
 
+        if (!this.isBookIdValid(bookId)) {
+            return false;
+        }
+
+        Patron patron = this.patronList[patronId];
+        Book book = this.bookList[bookId];
+
+        // Fail if patron will not enjoy the book
+        if (!patron.willEnjoyBook(book)) {
+            return false;
+        }
+
         int borrowed = this.bookBorrowedForPatronId(patronId);
 
         // If the patron already borrowed maximum number
@@ -123,7 +137,6 @@ public class Library {
         }
 
         // Set the book as borrowed by patronId
-        Book book = this.bookList[bookId];
         book.setBorrowerId(patronId);
 
         return true;
@@ -144,6 +157,8 @@ public class Library {
             if (this.bookList[i] == book) {
                 return i;
             }
+
+            i++;
         }
 
         // We didn't find same book
@@ -165,6 +180,8 @@ public class Library {
             if (this.patronList[i] == patron) {
                 return i;
             }
+
+            i++;
         }
 
         // We didn't find the patron.
@@ -276,6 +293,7 @@ public class Library {
         int i = 0;
         while (i < this.bookList.length && this.bookList[i] != null) {
             if (!this.isBookAvailable(i)) {
+                i++;
                 continue;
             }
 
@@ -284,6 +302,8 @@ public class Library {
             if (patron.willEnjoyBook(book)) {
                 return this.bookList[i];
             }
+
+            i++;
         }
 
         return null;

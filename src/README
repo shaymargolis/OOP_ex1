@@ -15,15 +15,20 @@ Library.java - Contains library implementation,
 =============================
 =          Design           =
 =============================
-I implemented the classes according to the 
+I implemented the classes according to the API's that were attached with the Exerice.
+The Patron and Book classes represents patron and book, and the Library is the manager
+that can assign books to patrons, add patron and books.
 
 
 
 =============================
 =  Implementation details   =
 =============================
-In the Game class, in order to store the different players, I chose the TreeSet dataset because we perform many
- insertion and deletion actions on this dataset, actions which a balanced tree performs efficiently.
+In the Patron class, I added a function that calculated the enjoyment of a Patron from a book.
+In the library class, I added 2 java arrays, one for the patrons in the library and one for
+the books in the library. both the arrays are in the length of the maxCapacity for each type (
+given in the Constructor), filled with nulls and the new books/patrons are assigned in the end
+of the array.
 
 
 =============================
